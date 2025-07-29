@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #ffe0ec, #ffeacb);
+  background: linear-gradient(135deg, #fffffffc, #ffffff);
   font-family: 'Comic Sans MS', cursive, sans-serif;
   overflow: hidden;
 }
@@ -72,10 +72,10 @@ body {
 /* 🧵 Stitch full screen */
 .stitch {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 100vw;
-  height: 100vh;
+  top: 20%;
+  left: 40%;
+  width: 50vw;
+  height: 50vh;
   object-fit: contain;
   transform: translate(-50%, -50%) scale(0);
   opacity: 0;
