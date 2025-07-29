@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #ffe0ec, #ffeacb);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* 🎁 Gift box styles */
+.gift {
+  width: 350px;
+  height: 230px;
+  position: relative;
+  cursor: pointer;
+  animation: bounce 2s infinite;
+  z-index: 10;
+}
+
+.lid {
+  width: 350px;
+  height: 60px;
+  background-color: #e74c3c;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  transition: all 0.6s ease;
+}
+
+.box {
+  width: 350px;
+  height: 170px;
+  background-color: #c0392b;
+  position: absolute;
+  top: 60px;
+  z-index: 1;
+}
+
+.ribbon {
+  width: 50px;
+  height: 230px;
+  background-color: gold;
+  position: absolute;
+  left: 150px;
+  top: 0;
+  z-index: 3;
+}
+
+.gift.open .lid {
+  transform: rotateX(120deg) translateY(-50px);
+  transform-origin: bottom;
+}
+
+/* ✉️ Message */
+.message {
+  margin-top: 30px;
+  font-size: 32px;
+  color: #160a31;
+  display: none;
+  animation: fadeIn 2s forwards;
+  z-index: 10;
+}
+
+/* 🧵 Stitch full screen */
+.stitch {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.stitch.show {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+/* Animations */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
